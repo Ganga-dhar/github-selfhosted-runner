@@ -1,0 +1,15 @@
+name: Test Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on:
+      - self-hosted
+      - linux
+      - ec2
+
+    steps:
+      - run: hostname
+      - run: docker --version
