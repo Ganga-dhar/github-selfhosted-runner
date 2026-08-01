@@ -11,7 +11,6 @@ dnf update -y
 # Install Required Packages
 ############################################
 
-dnf update -y
 
 dnf install -y \
 git \
