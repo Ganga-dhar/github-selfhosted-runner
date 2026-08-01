@@ -27,3 +27,20 @@ variable "private_subnets" {
   description = "Private Subnets"
   type        = list(string)
 }
+
+variable "github_owner" {
+  type = string
+}
+
+variable "github_repo" {
+  type = string
+}
+
+variable "github_pat" {
+  type      = string
+  sensitive = true
+}
+
+variable "runner_labels" {
+  type = string
+}

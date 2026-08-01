@@ -17,7 +17,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: terraform/environments
+        working-directory: terraform/environments/dev
 
     steps:
 
@@ -43,7 +43,7 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
 
       - name: Terraform Init
-        run: terraform init -backend-config=dev/dev-backend-config.tfvars
+        run: terraform init -backend-config=backend-config-dev.tfvars
 
       - name: Terraform Format
         run: terraform fmt -check
@@ -56,13 +56,14 @@ jobs:
             pwd
             ls -la
             cat main.tf
-            ls -la ../../modules/vpc
+            ls -la ../../../modules/vpc
+            
       - name: Terraform Plan
-        run: terraform plan -var-file=dev/dev.tfvars
+        run: terraform plan -var-file=dev.tfvars
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
-        run: terraform apply
+        run: terraform apply -auto-approve -var-file=dev.tfvars
 
 
 
