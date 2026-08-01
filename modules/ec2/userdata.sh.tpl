@@ -106,12 +106,11 @@ RUNNER_VERSION="2.328.0"
 
 curl -L \
 -o actions-runner.tar.gz \
-https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
+https://github.com/actions/runner/releases/download/v$${RUNNER_VERSION}/actions-runner-linux-x64-$${RUNNER_VERSION}.tar.gz
 
 tar xzf actions-runner.tar.gz
 
 chown -R github-runner:github-runner /actions-runner
-
 ############################################
 # Get Registration Token
 ############################################
