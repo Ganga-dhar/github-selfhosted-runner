@@ -33,10 +33,6 @@ variable "key_name" {
 }
 
 
-variable "runner_labels" {
-  type = string
-  default = "self-hosted,linux,docker"
-}
 
 variable "github_owner" {
   type = string
