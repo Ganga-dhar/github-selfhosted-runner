@@ -11,7 +11,7 @@ resource "aws_instance" "github_runner" {
 
   key_name               = var.key_name
 
- user_data = templatefile("${path.module}/user_data.sh.tpl", {
+ user_data = templatefile("${path.module}/userdata.sh.tpl", {
 
   github_owner = var.github_owner
   github_repo  = var.github_repo
