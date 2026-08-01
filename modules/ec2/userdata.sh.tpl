@@ -1,18 +1,20 @@
 #!/bin/bash
 set -euxo pipefail
 
+exec > >(tee /var/log/github-runner-install.log)
+exec 2>&1
 ############################################
 # System Update
 ############################################
 
-dnf update -y
+dnf update -y --allowerasing
 
 ############################################
 # Install Required Packages
 ############################################
 
 
-dnf install -y \
+dnf install -y --allowerasing \
 git \
 docker \
 wget \
