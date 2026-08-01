@@ -11,15 +11,16 @@ dnf update -y
 # Install Required Packages
 ############################################
 
+dnf update -y
+
 dnf install -y \
-    git \
-    docker \
-    wget \
-    curl \
-    jq \
-    tar \
-    unzip \
-    yum-utils
+git \
+docker \
+wget \
+jq \
+tar \
+unzip \
+yum-utils
 
 ############################################
 # Enable Docker
